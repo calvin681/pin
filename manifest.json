@@ -1,0 +1,17 @@
+{
+  "name" : "Pin Search",
+  "version" : "1.0.0",
+  "description" : "Perform a Google Image Search on any picture on Pinterest.",
+  "content_scripts" : [
+    {
+      "matches" : [ "*://*.pinterest.com/*" ],
+      "css" : [ "ext_search.css" ],
+      "js" : [ "jquery-1.7.1.min.js", "contentscript.js" ]
+    }
+  ],
+  "icons" : {
+    "16" : "logo_16.png",
+    "48" : "logo_48.png",
+    "128" : "logo_128.png"
+  }
+}

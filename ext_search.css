@@ -1,0 +1,12 @@
+.actions .ext-search-container {
+  right: 0;
+  top: 28px;
+}
+
+.actions .ext-search:hover em {
+  background-position: 0 -10px;
+}
+
+.actions .ext-search:active em {
+  background-position: 0 -20px;
+}
