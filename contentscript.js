@@ -37,5 +37,9 @@
     setTimeout(injectSearch, 500);
   });
   
+  $("#NewIndicator").click(function() {
+    setTimeout(injectSearch, 500);
+  });
+  
 })(jQuery);
 
