@@ -7,6 +7,10 @@
   
   var numPins = 0;
   
+  var gaTrack = function() {
+    chrome.extension.sendRequest({'track': true});
+  };
+  
   var injectSearch = function() {
     var count = $("div.pin").length;
     // Do only if there are new pins on the page.
@@ -24,9 +28,11 @@
       // Append search button with image url.
       newPins.each(function() {
         var $el = $(this);
-        var src = $el.find("> a.ImgLink > img").attr("src").replace("_b.jpg", "_f.jpg");
-        $el.find("> .actions").append(new String(searchButton).replace("#IMAGE_URL#",
-          encodeURIComponent(src)));
+        var src = $el.find("> a.ImgLink > img").attr("data-src") || $el.find("> a.ImgLink > img").attr("src");
+        src = src.replace("_b.jpg", "_f.jpg");
+        var $search = $(new String(searchButton).replace("#IMAGE_URL#", encodeURIComponent(src)));
+        $el.find("> .actions").append($search);
+        $search.click(gaTrack);
       });
     }
   };

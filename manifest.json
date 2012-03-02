@@ -1,7 +1,8 @@
 {
   "name" : "Pin Search",
-  "version" : "1.0.2",
+  "version" : "1.0.3",
   "description" : "Perform a Google Image Search on any picture on Pinterest.",
+  "background_page": "background.html",
   "content_scripts" : [
     {
       "matches" : [ "*://*.pinterest.com/*" ],
