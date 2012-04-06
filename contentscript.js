@@ -20,18 +20,18 @@
       // Find all pins without the search button.
       var newPins = $("div.pin").filter(function() {
         var $el = $(this);
-        return $el.find("> .actions").length &&
-          $el.find("> .actions > .ext-search-container").length === 0 &&
-          $el.find("> a.ImgLink > img").length && $el.find("> a.ImgLink > img.video").length === 0;
+        return $el.find(".actions").length &&
+          $el.find(".actions > .ext-search-container").length === 0 &&
+          $el.find("a.PinImage.ImgLink > img").length && $el.find("a.PinImage.ImgLink > img.video").length === 0;
       });
       
       // Append search button with image url.
       newPins.each(function() {
         var $el = $(this);
-        var src = $el.find("> a.ImgLink > img").attr("data-src") || $el.find("> a.ImgLink > img").attr("src");
+        var src = $el.find("a.PinImage.ImgLink > img").attr("data-src") || $el.find("a.PinImage.ImgLink > img").attr("src");
         src = src.replace("_b.jpg", "_f.jpg");
         var $search = $(new String(searchButton).replace("#IMAGE_URL#", encodeURIComponent(src)));
-        $el.find("> .actions").append($search);
+        $el.find(".actions").append($search);
         $search.click(gaTrack);
       });
     }
