@@ -1,6 +1,6 @@
 {
   "name" : "Pin Search | Image Search on Pinterest",
-  "version" : "1.0.5",
+  "version" : "1.0.6",
   "description" : "Perform a Google Image Search on any picture on Pinterest.",
   "background_page": "background.html",
   "content_scripts" : [

@@ -1,6 +1,12 @@
 .actions .ext-search-container {
-  right: 0;
-  top: 28px;
+  clear: both;
+  padding-top: 3px;
+  overflow: hidden;
+}
+
+.actions a.ext-search {
+  float: right !important;
+  margin-right: 0 !important;
 }
 
 .actions .ext-search:hover em {
