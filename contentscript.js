@@ -1,7 +1,7 @@
 (function($) {
   var searchButton = "<div class='ext-search-container'>" +
     "<a href='https://www.google.com/searchbyimage?image_url=#IMAGE_URL#&hl=en' " +
-    "class='Button Button11 WhiteButton ext-search' target='_blank'>" +
+    "class='Button11 WhiteButton ext-search editbutton ContrastButton Button' target='_blank'>" +
     "<strong><em style='background: url("+chrome.extension.getURL('ext_search_action.png')+")'></em>" +
     "Search</strong><span></span></a></div>";
   

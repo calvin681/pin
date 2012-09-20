@@ -1,7 +1,7 @@
 .actions .ext-search-container {
   clear: both;
-  padding-top: 3px;
-  overflow: hidden;
+  padding-top: 5px;
+/*  overflow: hidden;*/
 }
 
 .actions a.ext-search {
