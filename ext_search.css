@@ -16,3 +16,7 @@
 .actions .ext-search:active em {
   background-position: 0 -20px;
 }
+
+.Pin .repinLikeWrapper .Button.likeSmall.searchButton em {
+  width: 10px;
+}

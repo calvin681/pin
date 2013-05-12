@@ -1,13 +1,14 @@
 {
   "manifest_version": 2,
   "name" : "Pin Search | Image Search on Pinterest",
-  "version" : "1.0.8",
+  "version" : "1.0.11",
   "description" : "Perform a Google Image Search on any picture on Pinterest.",
   "background": {
     "scripts": ["analytics.js"]
   },
   "web_accessible_resources": [
-    "ext_search_action.png"
+    "ext_search_action.png",
+    "ext_search_action_2.png"
   ],
   "content_scripts" : [
     {
@@ -20,5 +21,6 @@
     "16" : "logo_16.png",
     "48" : "logo_48.png",
     "128" : "logo_128.png"
-  }
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
