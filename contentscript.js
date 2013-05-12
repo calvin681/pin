@@ -12,6 +12,16 @@
   var gaTrack = function() {
     chrome.extension.sendRequest({'track': true});
   };
+
+  var searchButtonClicked = function(event) {
+    var src = $(event.currentTarget).closest("div.Pin").find(".pinImageWrapper img.image").attr("src");
+
+    event.stopImmediatePropagation();
+    event.preventDefault();
+    gaTrack();
+    window.open("https://www.google.com/searchbyimage?image_url="+encodeURIComponent(src)+"&hl=en", "_blank");
+    return false;
+  };
   
   var injectSearch = function() {
     if ($("div.pin").length) {
@@ -29,17 +39,9 @@
     // Append search button with image url.
     newPins.each(function() {
       var $el = $(this);
-      var src = $el.find(".pinImageWrapper img.image").attr("src");
-      
       var $search = $(searchButton);
       $el.find(".repinLikeWrapper").append($search);
-      $search.click(function(event) {
-        event.stopImmediatePropagation();
-        event.preventDefault();
-        gaTrack();
-        window.open("https://www.google.com/searchbyimage?image_url="+encodeURIComponent(src)+"&hl=en", "_blank");
-        return false;
-      });
+      $search.click(searchButtonClicked);
     });
   };
 
